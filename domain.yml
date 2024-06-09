@@ -1,0 +1,259 @@
+version: '3.1'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- greet
+- deny
+- request_medic
+- goodbye
+- affirm
+- stop
+- out_of_scope
+- bot_challenge
+
+slots:
+  first_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: medic_form
+           requested_slot: first_name
+  last_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: medic_form
+           requested_slot: last_name
+  birth_date:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: medic_form
+           requested_slot: birth_date
+  gender:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: medic_form
+           requested_slot: gender
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: medic_form
+           requested_slot: email
+  blood_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: medic_form
+           requested_slot: blood_type
+  occupation:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: medic_form
+          requested_slot: occupation
+  civil_status:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: medic_form
+          requested_slot: civil_status
+  personal_history:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: medic_form
+          requested_slot: personal_history
+  family_history:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: medic_form
+          requested_slot: family_history
+  alcohol_use:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: medic_form
+          requested_slot: alcohol_use
+  tobaco_use:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: medic_form
+          requested_slot: tobaco_use
+  symptoms:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text 
+        conditions:
+        - active_loop: medic_form
+          requested_slot: symptoms
+  medication:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: medic_form
+          requested_slot: medication
+
+forms:
+  medic_form:
+    required_slots:
+      - first_name
+      - last_name
+      - birth_date
+      - gender
+      - email
+      - blood_type
+      - occupation
+      - civil_status
+      - personal_history      
+      - family_history
+      - alcohol_use
+      - tobaco_use
+      - symptoms
+      - medication
+
+
+responses:
+  utter_greet:
+  - text: Hola muy buenas
+  - text: Hola, soy tu asistente
+  - text: Muy buenas, soy tu asistente. ¿En qué te puedo ayudar?
+  utter_goodbye:
+  - text: Adiós
+  - text: Hasta luego Lucas.
+  - text: Bueno pues ya nos vemos el jueves que es el cumple de Paco creo.
+  - text: Cuídate que te hace falta anda.
+  - text: Venga hasta ahora, dale recuerdos a tus hermanos.
+  utter_iamabot:
+  - text: Soy un bot hecho con Rasa, tu eres un humano por lo que veo.
+  utter_out_of_scope:
+  - text: Lo siento, pero desconozco lo que pides. Sin embargo, prueba otra vez y a lo mejor te podré ayudar.
+  utter_submit:
+  - text: Ok. ¡Entendido! Gracias por proporcionarme tu información. Estoy procesando tus datos ahora.
+  - text: Perfecto, he registrado tu información.
+  utter_slots_values:
+  - text: |
+      A continuación voy a confirmar tus datos recogidos en el historial clínico para el profesional sanitario:
+      Datos personales: {first_name} {last_name}
+      Fecha de nacimiento:{birth_date}
+      Sexo:{gender}
+      Email:{email}
+      Grupo sanguíneo:{blood_type}
+      Ocupación:{occupation}
+      Estado civil:{civil_status}
+      Antecedentes personales: {personal_history}
+      Antecedentes familiares: {family_history}
+      Hábitos tóxicos de alcohol: {alcohol_use} y tábaco {tobaco_use}.
+      Síntomas: {symptoms}.
+      Tratamiento actual/medicación: {medication}.
+  utter_ask_medic_form_first_name:
+  - text: Dime primero tu nombre de pila
+  utter_ask_medic_form_last_name:
+  - text: Dime ahora tu apellido
+  utter_ask_medic_form_birth_date:  
+  - text: |
+      Dime ahora tu fecha de nacimiento; la formula es dia/mes/año 
+      Ejemplo: 22/10/2003 o 01/03/1956
+  utter_ask_medic_form_gender:  
+  - text: Dime ahora tu sexo; puedes elegir entre "masculino" o "femenino".
+  utter_ask_medic_form_email:
+  - text: |
+      Dime ahora tu mail; recuerda que debe estar en minúsculas.
+      Esto es un ejemplo: usuario@gmail.com
+  utter_ask_medic_form_blood_type:
+  - text: |
+      Dime ahora tu grupo sanguíneo; puedes elegir entre
+       "0-", "0+", "A-", "A+", "B-", "B+", "AB-", "AB+".
+       Si no conoces tu grupo sanguíneo puedes escribir "ninguno".
+  utter_ask_medic_form_occupation:
+  - text: |
+      Dime ahora tu ocupación actual. 
+      Puedes escribir empleado/a, desempleado/a, estudiante o jubilado/a.
+  utter_ask_medic_form_civil_status:
+  - text: |
+      Dime ahora tu estado civil.
+      Entre casado/a, viudo/a, soltero/a, separado/a, divorciado/a.
+  utter_ask_medic_form_personal_history:
+  - text: Dime ahora tu historial personal, antecedentes de enfermedades e ingresos en consulta previos.
+  utter_ask_medic_form_family_history:
+  - text: |
+      Dime ahora tu historial familiar:
+      Antecedentes de enfermedades u operaciones de tus padres, hermanos, abuelos o familiares cercanos.
+  utter_ask_medic_form_alcohol_use:
+  - text: |
+      Dime ahora tu consumo de alcohol. Escribe en minúsculas.
+      Puedes responder con nunca, raramente (largo intervalo entre ocasiones), frecuencia muy baja (mensual),
+      frecuencia baja (fines de semana o 1-3 veces por semana), frecuencia media (semanal, + 3 veces/semana),
+      frecuencia alta (a diario), frecuencia muy alta (+2 veces/día).
+  utter_ask_medic_form_tobaco_use:
+  - text: |
+      Dime ahora tu consumo de tabaco. Escribe en minúsculas.
+      Puedes responder con nunca, raramente (muy ocasionalmente), frecuencia muy baja (mensual),
+      frecuencia baja (fines de semana), frecuencia media (+ 3 veces por semana),
+      frecuencia alta (a diario), frecuencia muy alta (+ 1 cajetilla diaria).
+  utter_ask_medic_form_symptoms:
+  - text: |
+      Dime ahora los síntomas que has tenido
+      y por los que querrías proporcionar tu historial médico para ir a consulta.
+  utter_ask_medic_form_medication:
+  - text: Tratamiento actual que tomas. Si no tomas ninguno puedes escribir "nada".
+  utter_ask_continue:
+  - text: ¿No quieres seguir?
+
+
+actions:
+- utter_out_of_scope
+- utter_greet
+- utter_ask_medic_form_first_name
+- utter_ask_medic_form_last_name
+- utter_ask_medic_form_birth_date
+- utter_ask_medic_form_gender
+- utter_ask_medic_form_email 
+- utter_ask_medic_form_blood_type
+- utter_ask_medic_form_occupation
+- utter_ask_medic_form_civil_status
+- utter_ask_medic_form_personal_history
+- utter_ask_medic_form_family_history
+- utter_ask_medic_form_alcohol_use
+- utter_ask_medic_form_tobaco_use
+- utter_ask_medic_form_symptoms
+- utter_ask_medic_form_medication
+- utter_slots_values
+- utter_submit
+- action_deactivate_loop
+- validate_medic_form
+- action_save_to_csv
+- action_disclaimer
