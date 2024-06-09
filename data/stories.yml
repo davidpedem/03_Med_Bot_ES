@@ -1,0 +1,878 @@
+version: "3.1"
+
+stories:
+
+- story: interactive_story_1 #Anemia ferropénica
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: pedro
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: garcía
+  - action: utter_ask_medic_form_birth_date
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: birth_date
+  - slot_was_set:
+    - birth_date: 10/05/1946
+  - action: utter_ask_medic_form_gender
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: masculino
+  - action: utter_ask_medic_form_email
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: correo1@example.com
+  - action: utter_ask_medic_form_blood_type
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: blood_type
+  - slot_was_set:
+    - blood_type: B+
+  - action: utter_ask_medic_form_occupation
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: occupation
+  - slot_was_set:
+    - occupation: jubilado
+  - action: utter_ask_medic_form_civil_status
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: civil_status
+  - slot_was_set:
+    - civil_status: viudo
+  - action: utter_ask_medic_form_personal_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: personal_history
+  - slot_was_set:
+    - personal_history: Hipertensión, hiperlapsia prostática y osteoartritis. Celiaco.
+  - action: utter_ask_medic_form_family_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: family_history
+  - slot_was_set:
+    - family_history: Fallecimiento del padre  por problemas cardíacos a los 82 años.
+  - action: utter_ask_medic_form_alcohol_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: alcohol_use
+  - slot_was_set:
+    - alcohol_use: frecuencia baja
+  - action: utter_ask_medic_form_tobaco_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: tobaco_use
+  - slot_was_set:
+    - tobaco_use: raramente
+  - action: utter_ask_medic_form_symptoms
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: symptoms
+  - slot_was_set:
+    - symptoms: Me siento débil y tengo mareos y dolores de cabeza desde hace 6 meses.Palpitaciones en los oidos.
+  - action: utter_ask_medic_form_medication
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: medication
+  - slot_was_set:
+    - medication: Suplemento de ácido fólico de 1 mg por vía oral una vez al día. 
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_save_to_csv 
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: interactive_story_2 #Beta thalasemia
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: laura
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: fernández
+  - action: utter_ask_medic_form_birth_date
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: birth_date
+  - slot_was_set:
+    - birth_date: 31/01/1979
+  - action: utter_ask_medic_form_gender
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: femenino
+  - action: utter_ask_medic_form_email
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: laurita.450@gmail.com
+  - action: utter_ask_medic_form_blood_type
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: blood_type
+  - slot_was_set:
+    - blood_type: 0+
+  - action: utter_ask_medic_form_occupation
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: occupation
+  - slot_was_set:
+    - occupation: desempleada
+  - action: utter_ask_medic_form_civil_status
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: civil_status
+  - slot_was_set:
+    - civil_status: divorciada
+  - action: utter_ask_medic_form_personal_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: personal_history
+  - slot_was_set:
+    - personal_history: Diagnosticada con Beta talasemia a los 12. Anemia moderada. Requiere transfusiones ocasionales desde los 12 años. Necesidad de gran recuperación después de actividades físicas.Consumo una dieta baja en alimentos ricos en hierro.
+  - action: utter_ask_medic_form_family_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: family_history
+  - slot_was_set:
+    - family_history: Mi familia no tiene antecedentes médicos.Es originaria de la India.
+  - action: utter_ask_medic_form_alcohol_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: alcohol_use
+  - slot_was_set:
+    - alcohol_use: raramente
+  - action: utter_ask_medic_form_tobaco_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: tobaco_use
+  - slot_was_set:
+    - tobaco_use: nunca
+  - action: utter_ask_medic_form_symptoms
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: symptoms
+  - slot_was_set:
+    - symptoms: Tengo fatiga leve, debilidad y dificultad respiratoria sobre todo en mi ciclo menstrual. Palidez. Hemoglobina fetal (sangre en las heces).
+  - action: utter_ask_medic_form_medication
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: medication
+  - slot_was_set:
+    - medication: No tomo medicación. Tranfusiones ocasionales de sangre.
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_save_to_csv 
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: interactive_story_3 #Esferocitosis
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: julio
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: peña
+  - action: utter_ask_medic_form_birth_date
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: birth_date
+  - slot_was_set:
+    - birth_date: 23/07/2000
+  - action: utter_ask_medic_form_gender
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: masculino
+  - action: utter_ask_medic_form_email
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: portatilesrojos@hotmail.es
+  - action: utter_ask_medic_form_blood_type
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: blood_type
+  - slot_was_set:
+    - blood_type: AB+
+  - action: utter_ask_medic_form_occupation
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: occupation
+  - slot_was_set:
+    - occupation: estudiante
+  - action: utter_ask_medic_form_civil_status
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: civil_status
+  - slot_was_set:
+    - civil_status: soltero
+  - action: utter_ask_medic_form_personal_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: personal_history
+  - slot_was_set:
+    - personal_history: Historial de asma con inhalador de albuterol. Fractura de muñeca.
+  - action: utter_ask_medic_form_family_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: family_history
+  - slot_was_set:
+    - family_history: Mi madre tuvo esferocitosis hereditaria y mis dos primos también han sido diganosticados de esferocitosis.
+  - action: utter_ask_medic_form_alcohol_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: alcohol_use
+  - slot_was_set:
+    - alcohol_use: frecuencia alta
+  - action: utter_ask_medic_form_tobaco_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: tobaco_use
+  - slot_was_set:
+    - tobaco_use: frecuencia alta
+  - action: utter_ask_medic_form_symptoms
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: symptoms
+  - slot_was_set:
+    - symptoms: Fatiga, dolor abdominal, palidez y esplenomegalia leve.
+  - action: utter_ask_medic_form_medication
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: medication
+  - slot_was_set:
+    - medication: Suplemento de ácido fólico 1 miligramo oral una vez al día y transfusiones de sangre ocasionalmente por anemia
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_save_to_csv 
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+
+- story: interactive_story_4 #Anemia de células falciformes (Sickle Cell)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: pepa
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: pérez
+  - action: utter_ask_medic_form_birth_date
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: birth_date
+  - slot_was_set:
+    - birth_date: 09/06/1966
+  - action: utter_ask_medic_form_gender
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: femenino
+  - action: utter_ask_medic_form_email
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: pepa.perezriv@gmail.es
+  - action: utter_ask_medic_form_blood_type
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: blood_type
+  - slot_was_set:
+    - blood_type: AB-
+  - action: utter_ask_medic_form_occupation
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: occupation
+  - slot_was_set:
+    - occupation: jubilada
+  - action: utter_ask_medic_form_civil_status
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: civil_status
+  - slot_was_set:
+    - civil_status: viuda
+  - action: utter_ask_medic_form_personal_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: personal_history
+  - slot_was_set:
+    - personal_history: Diagnosticada con enfermedad de células falciformes.
+  - action: utter_ask_medic_form_family_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: family_history
+  - slot_was_set:
+    - family_history: Mi padre falleció por complicaciones con la Enfermedad de células falciformes.
+  - action: utter_ask_medic_form_alcohol_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: alcohol_use
+  - slot_was_set:
+    - alcohol_use: frecuencia media
+  - action: utter_ask_medic_form_tobaco_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: tobaco_use
+  - slot_was_set:
+    - tobaco_use: nunca
+  - action: utter_ask_medic_form_symptoms
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: symptoms
+  - slot_was_set:
+    - symptoms: Dolor articular y dificultad respiratoria. Palidez, infecciones frecuentes e hinchazón de las piernas. Pérdida de apetito y orina oscura.
+  - action: utter_ask_medic_form_medication
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: medication
+  - slot_was_set:
+    - medication: Transfusiones de sangre periódicas y medicamentos como hidroxiurea para controlar los síntomas.
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_save_to_csv 
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: interactive_story_5 #Anemia hemolítica
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: miguel
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: verdasco
+  - action: utter_ask_medic_form_birth_date
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: birth_date
+  - slot_was_set:
+    - birth_date: 22/10/1959
+  - action: utter_ask_medic_form_gender
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: masculino
+  - action: utter_ask_medic_form_email
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: miguel_verdasco@trabajo.org
+  - action: utter_ask_medic_form_blood_type
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: blood_type
+  - slot_was_set:
+    - blood_type: B-
+  - action: utter_ask_medic_form_occupation
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: occupation
+  - slot_was_set:
+    - occupation: empleado
+  - action: utter_ask_medic_form_civil_status
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: civil_status
+  - slot_was_set:
+    - civil_status: casado
+  - action: utter_ask_medic_form_personal_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: personal_history
+  - slot_was_set:
+    - personal_history: Fibrilación auricular diagnosticada hace ocho años. Hipertensión, diabetes tipo 2 y osteopenia. Cirugía de bypass coronario.
+  - action: utter_ask_medic_form_family_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: family_history
+  - slot_was_set:
+    - family_history: Dos hermanas murieron por causas desconocidas antes de los 50 años y un hermano desarrollo cáncer a los 60.
+  - action: utter_ask_medic_form_alcohol_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: alcohol_use
+  - slot_was_set:
+    - alcohol_use: frecuencia muy baja
+  - action: utter_ask_medic_form_tobaco_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: tobaco_use
+  - slot_was_set:
+    - tobaco_use: nunca
+  - action: utter_ask_medic_form_symptoms
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: symptoms
+  - slot_was_set:
+    - symptoms: Fatiga, falta de apetito, dificultad respiratoria y orina oscura y heces pálidas.
+  - action: utter_ask_medic_form_medication
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: medication
+  - slot_was_set:
+    - medication: Warfarina, lisinospril para la hipertensión y merformina para la diabtes dos veces al día.
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_save_to_csv 
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: interactive_story_6 #Anemia por deficiencia de vitamina B12
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: andrea
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: rivera
+  - action: utter_ask_medic_form_birth_date
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: birth_date
+  - slot_was_set:
+    - birth_date: 29/02/1989
+  - action: utter_ask_medic_form_gender
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: femenino
+  - action: utter_ask_medic_form_email
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: andre_rivera@trabajo.org
+  - action: utter_ask_medic_form_blood_type
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: blood_type
+  - slot_was_set:
+    - blood_type: A-
+  - action: utter_ask_medic_form_occupation
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: occupation
+  - slot_was_set:
+    - occupation: empleada
+  - action: utter_ask_medic_form_civil_status
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: civil_status
+  - slot_was_set:
+    - civil_status: casada
+  - action: utter_ask_medic_form_personal_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: personal_history
+  - slot_was_set:
+    - personal_history: Anemia perniciosa, diagnosticada a los 12 e hipertensión. Sin hospitalizaciones importantes previas.
+  - action: utter_ask_medic_form_family_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: family_history
+  - slot_was_set:
+    - family_history: Mi abuela sufría pérdidas de memoria, mareos y debilidad.
+  - action: utter_ask_medic_form_alcohol_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: alcohol_use
+  - slot_was_set:
+    - alcohol_use: raramente
+  - action: utter_ask_medic_form_tobaco_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: tobaco_use
+  - slot_was_set:
+    - tobaco_use: frecuencia muy baja
+  - action: utter_ask_medic_form_symptoms
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: symptoms
+  - slot_was_set:
+    - symptoms: Pérdida de memoria, alteración del sentido de la posición, mareos
+  - action: utter_ask_medic_form_medication
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: medication
+  - slot_was_set:
+    - medication: Inyección de vitamina b12 intramuscular una vez al mes.
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_save_to_csv 
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_7 # Anemia por deficiencia de piruvata quinasa
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: juan
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: sánchez
+  - action: utter_ask_medic_form_birth_date
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: birth_date
+  - slot_was_set:
+    - birth_date: 10/05/1994
+  - action: utter_ask_medic_form_gender
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: masculino
+  - action: utter_ask_medic_form_email
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set: 
+    - email: correo1@example.com
+  - action: utter_ask_medic_form_blood_type
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: blood_type
+  - slot_was_set:
+    - blood_type: A+ 
+  - action: utter_ask_medic_form_occupation
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: occupation
+  - slot_was_set:
+    - occupation: desempleado
+  - action: utter_ask_medic_form_civil_status
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: civil_status
+  - slot_was_set:
+    - civil_status: divorciado
+  - action: utter_ask_medic_form_personal_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: personal_history
+  - slot_was_set:
+    - personal_history: nada
+  - action: utter_ask_medic_form_family_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: family_history
+  - slot_was_set:
+    - family_history: Sin antecedentes familiares
+  - action: utter_ask_medic_form_alcohol_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: alcohol_use
+  - slot_was_set:
+    - alcohol_use: nunca
+  - action: utter_ask_medic_form_tobaco_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: tobaco_use
+  - slot_was_set:
+    - tobaco_use: frecuencia media
+  - action: utter_ask_medic_form_symptoms
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: symptoms
+  - slot_was_set:
+    - symptoms: Fatiga persistente, piel amarilla y heces pálidas.
+  - action: utter_ask_medic_form_medication
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: medication
+  - slot_was_set:
+    - medication: ninguno
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_save_to_csv 
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: interactive_story_8 # Anemia por deficiencia de ácido fólico
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: laura
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: delgado
+  - action: utter_ask_medic_form_birth_date
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: birth_date
+  - slot_was_set:
+    - birth_date: 01/31/1997
+  - action: utter_ask_medic_form_gender
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: femenino
+  - action: utter_ask_medic_form_email
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: correo1@example.com
+  - action: utter_ask_medic_form_blood_type
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: blood_type
+  - slot_was_set:
+    - blood_type: 0- 
+  - action: utter_ask_medic_form_occupation
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: occupation
+  - slot_was_set:
+    - occupation: estudiante
+  - action: utter_ask_medic_form_civil_status
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: civil_status
+  - slot_was_set:
+    - civil_status: soltera
+  - action: utter_ask_medic_form_personal_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: personal_history
+  - slot_was_set:
+    - personal_history: Sigue una dieta vegana estricta, eliminando fuentes de folatos naturales de los productos animales.
+  - action: utter_ask_medic_form_family_history
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: family_history
+  - slot_was_set:
+    - family_history: Una hermana recibió suplementos de ácido fólico antes del embarazo y otra hermana no.
+  - action: utter_ask_medic_form_alcohol_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: alcohol_use
+  - slot_was_set:
+    - alcohol_use: frecuencia media
+  - action: utter_ask_medic_form_tobaco_use
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: tobaco_use
+  - slot_was_set:
+    - tobaco_use: raramente
+  - action: utter_ask_medic_form_symptoms
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: symptoms
+  - slot_was_set:
+    - symptoms: Fatiga, irritabilidad, falta de apetito, debilidad muscular, ulceras en lengua y boca, y dificultad respiratoria.
+  - action: utter_ask_medic_form_medication
+  - action: medic_form
+  - active_loop: medic_form
+  - slot_was_set:
+    - requested_slot: medication
+  - slot_was_set:
+    - medication: ninguno
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_save_to_csv 
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: User interrupts the form and doesn't want to continue
+  steps:
+  - intent: request_medic
+  - action: action_disclaimer
+  - action: medic_form
+  - active_loop: medic_form
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: action_deactivate_loop
+  - active_loop: null

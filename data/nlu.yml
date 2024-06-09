@@ -1,0 +1,83 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - hola, saludos
+    - hola, empezamos
+    - qué tal
+    - hola, cómo estás?
+    - buenos días
+    - hola, buenos días
+    - buenas tardes
+    - buenas noches
+    - saludos
+    
+- intent: goodbye
+  examples: |
+    - adiós
+    - nos vemos
+    - hasta luego
+    - que tengas buen día
+    - que lo pases bien
+    - hasta siempre
+    - ya te he dicho lo que querías, hasta luego
+
+- intent: affirm
+  examples: |
+    - sí
+    - desde luego
+    - de acuerdo
+    - está bien
+    - por supuesto
+    - correcto
+    - ok
+
+- intent: deny
+  examples: |
+    - no
+    - nunca
+    - jamás
+    - no lo creo
+    - no me gusta
+    - que va
+    - desde luego que no
+
+- intent: stop
+  examples: |
+    - stop
+    - para
+    - interrumpe
+    - no quiero seguir
+    - aborta
+  
+- intent: bot_challenge
+  examples: |
+    - eres un bot?
+    - eres humano?
+    - estoy hablando con un bot?
+    - estoy hablando con un humano?
+    - estoy hablando con una persona?
+
+- intent: out_of_scope
+  examples: |
+    - quiero hacer una reserva
+    - quiero leer un periódico
+    - quiero saber qué tiempo hace
+    - no sé qué quiero 
+    - quiero comprar un coche
+
+- intent: request_medic
+  examples: |
+    - voy a decirte mi historial clínico
+    - voy a decirte mi historial clinico
+    - quiero decirte mi historial clínico
+    - quiero decirte mi historial clinico
+    - quiero darte mi historial clínico
+    - quiero darte mi historial clinico
+    - tienes que saber mi historial clínico
+    - tienes que saber mi historial clinico
+    - quiero hablarte de mí
+    - ayúdame
+    - ayudame
+    
