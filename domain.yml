@@ -153,10 +153,10 @@ responses:
   - text: Muy buenas, soy tu asistente. ¿En qué te puedo ayudar?
   utter_goodbye:
   - text: Adiós
-  - text: Hasta luego Lucas.
-  - text: Bueno pues ya nos vemos el jueves que es el cumple de Paco creo.
-  - text: Cuídate que te hace falta anda.
-  - text: Venga hasta ahora, dale recuerdos a tus hermanos.
+  - text: Hasta luego
+  - text: Buena tarde.
+  - text: Cuídate.
+  - text: Hasta ahora.
   utter_iamabot:
   - text: Soy un bot hecho con Rasa, tu eres un humano por lo que veo.
   utter_out_of_scope:
