@@ -263,7 +263,7 @@ class ActionSaveToCSV(Action):
         # Guardar los datos en el archivo CSV
         save_to_csv(user_data)
 
-        dispatcher.utter_message(text="La información ha sido guardada correctamente.\nEn el archivo '{}' verás tus datos para descargar".format('/content/03_Med_Bot_ES/data/Historial_clinico.csv'))
+        dispatcher.utter_message(text="La información ha sido guardada correctamente.\nEn el archivo '{}' verás tus datos disponibles.".format('/content/03_Med_Bot_ES/data/Historial_clinico.csv'))
         return []
 
 
