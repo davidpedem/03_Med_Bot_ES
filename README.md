@@ -1,5 +1,5 @@
 # Consulta_Med_Bot
-#Instrucción CLAVE: TIENES QUE DESCARGARTE EL ARCHIVO LLAMADO `Consulta_03_Med_Bot_ES_UR_David_Peña.ipynb`. Y SUBIRLO A GOOGLE DRIVE. Desde ahí lo abres y le das a conectar.
+**Instrucción CLAVE**: TIENES QUE DESCARGARTE EL ARCHIVO LLAMADO `Consulta_03_Med_Bot_ES_UR_David_Peña.ipynb`. Y SUBIRLO A GOOGLE DRIVE. Desde ahí lo abres y le das a conectar.
 ## Resumen del Proyecto
 
 Este proyecto de Trabajo de Fin de Máster (TFM) aborda el desarrollo y análisis de un modelo en tres partes:
